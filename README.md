@@ -42,4 +42,31 @@ Client Input → Encrypt (AES + HMAC) → Token → Socket → Decrypt (AES + Ve
 | Base64 Token | Safe network transmission |
 
 ---
+Run Server
+python server.py
 
+Run Client
+python client.py
+
+
+Enter the same shared password on both ends to begin encrypted communication.
+
+🧪 Example Terminal Session
+Server:
+=== AES Encrypted Chat Server ===
+Enter shared password: ********
+[+] Client connected
+[Client]: hello!
+
+Client:
+=== AES Encrypted Chat Client ===
+Enter shared password: ********
+[Server]: hi there!
+
+⚠ Security Notes
+
+Strong AES encryption, but password must be strong to resist brute-force attacks.
+
+Salt exchange is static in v1 for simplicity — will be dynamic in v2.
+
+Educational project: not production hardened (no authentication, MITM protection, or E2E identity verification yet).
